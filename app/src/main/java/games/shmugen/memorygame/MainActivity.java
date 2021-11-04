@@ -2,6 +2,7 @@ package games.shmugen.memorygame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         Shared.activity = this;
         Shared.engine.start();
+        Shared.engine.setBackgroundImageView(mBackgroundImage);
 
     }
 }
