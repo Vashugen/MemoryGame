@@ -17,17 +17,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        Shared.context = getApplicationContext();
+        ImageView mBackgroundImage = findViewById(R.id.background_image);
+
+        //Shared.context = getApplicationContext();
+        Context context = getApplicationContext();
         Shared.engine = Engine.getInstance();
         Shared.eventBus = EventBus.getInstance();
 
-        setContentView(R.layout.activity_main);
+
         mBackgroundImage = findViewById(R.id.background_image);
 
         Shared.activity = this;
         Shared.engine.start();
         Shared.engine.setBackgroundImageView(mBackgroundImage);
+
+
+
+    }
+
+    private void setmBackgroundImage(){
 
     }
 }
