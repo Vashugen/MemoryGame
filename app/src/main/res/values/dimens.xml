@@ -10,4 +10,10 @@
     <dimen name="settings_game_button_margin">30dp</dimen>
     <dimen name="start_game_button_lights">150dp</dimen>
 
+    <!--difficulty level-->
+    <dimen name="difficulty_padding">40dp</dimen>
+    <dimen name="difficulty_margin">10dp</dimen>
+    <dimen name="difficulty_margin_top">30dp</dimen>
+
+
 </resources>
