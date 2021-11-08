@@ -23,24 +23,27 @@ public class MenuFragment extends Fragment {
     private ImageView mSettingsGameButton;
     private ImageView mGooglePlayGameButton;
     private ImageView mStartButtonLights;
+    private ImageView mTooltip;
 
 
     @Override
     public View onCreateView(LayoutInflater inFlater, ViewGroup container, Bundle savedInstanceState) {
         View view = inFlater.inflate(R.layout.menu_fragment, container, false);
         mTitle = (ImageView) view.findViewById(R.id.title);
-        mStartGameButton = view.findViewById(R.id.start_game_button);
+        mStartGameButton = (ImageView) view.findViewById(R.id.start_game_button);
         mStartGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //animateA
             }
         });
-        mSettingsGameButton = view.findViewById(R.id.settings_game_button);
+        mSettingsGameButton = (ImageView) view.findViewById(R.id.settings_game_button);
         mSettingsGameButton.setSoundEffectsEnabled(false);
 
-        mGooglePlayGameButton = view.findViewById(R.id.google_play_button);
-        mStartButtonLights = view.findViewById(R.id.start_game_button_light);
+        mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);
+        mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_light);
+        mTooltip = (ImageView) view.findViewById(R.id.tooltip);
+
 
 
 
