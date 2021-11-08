@@ -49,6 +49,10 @@ public class ScreenController {
             case MENU:
                 //return new Men
                 break;
+
+            case DIFFICULTY:
+
+                break;
         }
         return new Fragment();
     }

@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--difficulty level-->
+    <dimen name="difficulty_padding">40dp</dimen>
+    <dimen name="difficulty_margin">10dp</dimen>
+    <dimen name="difficulty_margin_top">30dp</dimen>
 </resources>
