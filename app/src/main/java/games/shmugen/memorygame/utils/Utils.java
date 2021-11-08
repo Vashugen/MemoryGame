@@ -10,6 +10,10 @@ import games.shmugen.memorygame.common.Shared;
 
 public class Utils {
 
+    public static int px(int dp){
+        return (int) (Shared.context.getResources().getDisplayMetrics().density * dp);
+    }
+
     public static int screenWidth(){
         return Shared.context.getResources().getDisplayMetrics().widthPixels;
     }
