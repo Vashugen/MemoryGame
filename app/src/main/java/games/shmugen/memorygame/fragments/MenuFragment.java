@@ -79,6 +79,11 @@ public class MenuFragment extends Fragment {
         googlePlayAnimator.setInterpolator(new AccelerateInterpolator(2));
         googlePlayAnimator.setDuration(300);
 
+        //start button
+        ObjectAnimator startButtonAnimator = ObjectAnimator.ofFloat(mStartGameButton, "translationY", Utils.px(130));
+        startButtonAnimator.setInterpolator(new AccelerateInterpolator(2));
+        startButtonAnimator.setDuration(300);
+
 
 
     }
