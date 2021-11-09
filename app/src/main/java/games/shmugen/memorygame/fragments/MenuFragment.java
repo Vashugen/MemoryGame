@@ -56,9 +56,30 @@ public class MenuFragment extends Fragment {
 
     private void animateAllAssetsOff(AnimatorListenerAdapter adapter){
 
+        //title
         ObjectAnimator titleAnimator = ObjectAnimator.ofFloat(mTitle, "translationY", Utils.px(-200));
         titleAnimator.setInterpolator(new AccelerateInterpolator(2));
         titleAnimator.setDuration(300);
+
+        //lights
+        ObjectAnimator lightsAnimatorX = ObjectAnimator.ofFloat(mStartButtonLights, "scaleX", 0f);
+        ObjectAnimator lightsAnimatorY = ObjectAnimator.ofFloat(mStartButtonLights, "scaleY", 0f);
+
+        //tooltip
+        ObjectAnimator tooltipAnimator = ObjectAnimator.ofFloat(mTooltip, "alpha", 0f);
+        tooltipAnimator.setDuration(100);
+
+        //settingsButton
+        ObjectAnimator settingsAnimator = ObjectAnimator.ofFloat(mSettingsGameButton, "translationY", Utils.px(120));
+        settingsAnimator.setInterpolator(new AccelerateInterpolator(2));
+        settingsAnimator.setDuration(300);
+
+        //google play button
+        ObjectAnimator googlePlayAnimator = ObjectAnimator.ofFloat(mGooglePlayGameButton, "translationY", Utils.px(120));
+        googlePlayAnimator.setInterpolator(new AccelerateInterpolator(2));
+        googlePlayAnimator.setDuration(300);
+
+
 
     }
 }

@@ -34,7 +34,7 @@
             android:layout_marginTop="-40dp"
             android:layout_marginBottom="18dp"
             android:textSize="17sp"
-            android:background="@mipmap/time_border_foreground"
+            android:background="@mipmap/time_border_round"
             />
 
         <games.shmugen.memorygame.ui.DifficultyView
