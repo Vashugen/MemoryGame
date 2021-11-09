@@ -9,7 +9,7 @@ public class BackGameEvent extends AbstractEvent {
 
     @Override
     protected void fire(EventObserver eventObserver) {
-
+        eventObserver.onEvent(this);
     }
 
     @Override

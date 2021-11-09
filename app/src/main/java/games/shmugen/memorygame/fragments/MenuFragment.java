@@ -1,12 +1,15 @@
 package games.shmugen.memorygame.fragments;
 
+import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnimationSet;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import games.shmugen.memorygame.R;
+import games.shmugen.memorygame.common.Shared;
+import games.shmugen.memorygame.events.ui.StartEvent;
 import games.shmugen.memorygame.utils.Utils;
 
 public class MenuFragment extends Fragment {
@@ -34,7 +39,12 @@ public class MenuFragment extends Fragment {
         mStartGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //animateA
+                animateAllAssetsOff(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        Shared.eventBus.notify(new StartEvent());
+                    }
+                });
             }
         });
         mSettingsGameButton = (ImageView) view.findViewById(R.id.settings_game_button);
@@ -84,7 +94,10 @@ public class MenuFragment extends Fragment {
         startButtonAnimator.setInterpolator(new AccelerateInterpolator(2));
         startButtonAnimator.setDuration(300);
 
-
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(titleAnimator, lightsAnimatorX, lightsAnimatorY, tooltipAnimator, settingsAnimator, googlePlayAnimator, startButtonAnimator);
+        animatorSet.addListener(adapter);
+        animatorSet.start();
 
     }
 }
