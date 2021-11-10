@@ -38,7 +38,7 @@ public class EventObserveAdapter implements EventObserver{
 
     @Override
     public void onEvent(StartEvent event) {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override

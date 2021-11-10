@@ -16,7 +16,7 @@ public class ScreenController {
     private FragmentManager mFragmentManager;
     private static List<Screen> openedScreens = new ArrayList<>();
 
-    public static enum Screen {
+    public enum Screen {
         MENU,
         GAME,
         DIFFICULTY,
@@ -32,6 +32,7 @@ public class ScreenController {
     }
 
     public void openScreen(Screen screen){
+
         mFragmentManager = Shared.activity.getSupportFragmentManager();
 
         if(screen == Screen.GAME && openedScreens.get(openedScreens.size() - 1) == Screen.GAME){

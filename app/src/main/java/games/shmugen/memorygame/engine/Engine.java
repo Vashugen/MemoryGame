@@ -5,6 +5,8 @@ import android.widget.ImageView;
 
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.EventObserveAdapter;
+import games.shmugen.memorygame.events.engine.FlipDownCardsEvent;
+import games.shmugen.memorygame.events.engine.HidePairCardsEvent;
 import games.shmugen.memorygame.events.ui.BackGameEvent;
 import games.shmugen.memorygame.events.ui.DifficultySelectedEvent;
 import games.shmugen.memorygame.events.ui.FlipCardEvent;
@@ -48,4 +50,48 @@ public class Engine extends EventObserveAdapter {
         mBackgroundImage = backgroundImage;
     }
 
+    @Override
+    public void onEvent(StartEvent event) {
+        mScreenController.openScreen(ScreenController.Screen.THEME_SELECT);
+    }
+
+    @Override
+    public void onEvent(ResetBackgroundEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(FlipCardEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(DifficultySelectedEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(HidePairCardsEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(FlipDownCardsEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(ThemeSelectedEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(BackGameEvent event) {
+        super.onEvent(event);
+    }
+
+    @Override
+    public void onEvent(NextGameEvent event) {
+        super.onEvent(event);
+    }
 }

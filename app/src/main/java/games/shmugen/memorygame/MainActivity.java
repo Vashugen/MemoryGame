@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.engine.Engine;
+import games.shmugen.memorygame.engine.ScreenController;
 import games.shmugen.memorygame.events.EventBus;
 import games.shmugen.memorygame.utils.Utils;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Shared.engine.setBackgroundImageView(mBackgroundImage);
 
         setBackgroundImage();
+        ScreenController.getInstance().openScreen(ScreenController.Screen.MENU);
 
 
 
