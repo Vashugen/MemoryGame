@@ -28,14 +28,13 @@ public class MainActivity extends AppCompatActivity {
         Shared.engine = Engine.getInstance();
         Shared.eventBus = EventBus.getInstance();
 
-/*
         mBackgroundImage = findViewById(R.id.background_image);
 
         Shared.activity = this;
         Shared.engine.start();
         Shared.engine.setBackgroundImageView(mBackgroundImage);
 
-        setBackgroundImage();*/
+        setBackgroundImage();
 
 
 
