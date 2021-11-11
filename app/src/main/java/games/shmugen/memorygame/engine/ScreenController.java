@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import games.shmugen.memorygame.common.Shared;
+import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
 
 public class ScreenController {
 
@@ -53,6 +54,10 @@ public class ScreenController {
 
             case DIFFICULTY:
 
+                break;
+
+            case THEME_SELECT:
+                //return new ;
                 break;
         }
         return new Fragment();
