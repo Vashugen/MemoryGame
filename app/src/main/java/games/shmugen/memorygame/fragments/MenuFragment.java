@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import games.shmugen.memorygame.R;
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.ui.StartEvent;
+import games.shmugen.memorygame.ui.PopupManager;
 import games.shmugen.memorygame.utils.Utils;
 
 public class MenuFragment extends Fragment {
@@ -52,7 +53,7 @@ public class MenuFragment extends Fragment {
         mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //PopupM
+                PopupManager.showPopupSettings();
             }
         });
 
