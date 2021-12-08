@@ -10,6 +10,7 @@ import java.util.List;
 
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
+import games.shmugen.memorygame.fragments.MenuFragment;
 
 public class ScreenController {
 
@@ -49,9 +50,7 @@ public class ScreenController {
     private Fragment getFragment(Screen screen){
         switch (screen){
             case MENU:
-                //return new Men
-                break;
-
+                return new MenuFragment();
             case DIFFICULTY:
 
                 break;

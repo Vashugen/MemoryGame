@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView mBackgroundImage = findViewById(R.id.background_image);
-
         Shared.context = getApplicationContext();
         Shared.engine = Engine.getInstance();
         Shared.eventBus = EventBus.getInstance();
@@ -38,20 +36,14 @@ public class MainActivity extends AppCompatActivity {
         setBackgroundImage();
         ScreenController.getInstance().openScreen(ScreenController.Screen.MENU);
 
-
-
-
     }
 
     //установка изображения в бэкграунд и подгонка его размера под экран
     private void setBackgroundImage(){
 
-        Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+        Bitmap bitmap = Utils.scaleDown(R.mipmap.background, Utils.screenWidth(), Utils.screenHeight());
         bitmap = Utils.crop(bitmap, Utils.screenHeight(), Utils.screenWidth());
         bitmap = Utils.downscaleBitmap(bitmap, 2);
         mBackgroundImage.setImageBitmap(bitmap);
-
-
-
     }
 }

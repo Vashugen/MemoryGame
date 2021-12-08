@@ -49,6 +49,12 @@ public class MenuFragment extends Fragment {
         });
         mSettingsGameButton = (ImageView) view.findViewById(R.id.settings_game_button);
         mSettingsGameButton.setSoundEffectsEnabled(false);
+        mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //PopupM
+            }
+        });
 
         mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);
         mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_light);
