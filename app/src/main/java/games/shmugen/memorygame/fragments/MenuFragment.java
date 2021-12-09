@@ -48,6 +48,8 @@ public class MenuFragment extends Fragment {
                 });
             }
         });
+        mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_light);
+
         mSettingsGameButton = (ImageView) view.findViewById(R.id.settings_game_button);
         mSettingsGameButton.setSoundEffectsEnabled(false);
         mSettingsGameButton.setOnClickListener(new View.OnClickListener() {

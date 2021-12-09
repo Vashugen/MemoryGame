@@ -4,12 +4,15 @@ import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import games.shmugen.memorygame.R;
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
+//import games.shmugen.memorygame.fragments.GameFragment;
 import games.shmugen.memorygame.fragments.MenuFragment;
 
 public class ScreenController {
@@ -45,6 +48,10 @@ public class ScreenController {
         }
 
         Fragment fragment = getFragment(screen);
+        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+        openedScreens.add(screen);
     }
 
     private Fragment getFragment(Screen screen){
@@ -56,8 +63,11 @@ public class ScreenController {
                 break;
 
             case THEME_SELECT:
-                //return new ;
+                //return new ThemeSelectFragment();
                 break;
+
+            case GAME:
+                //return new GameFragment();
         }
         return new Fragment();
     }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,21 +8,11 @@
         android:id="@+id/start_game_button_light"
         android:layout_width="@dimen/start_game_button_lights"
         android:layout_height="@dimen/start_game_button_lights"
-        app:srcCompat="@mipmap/button_start_lights_foreground"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
-
-    <ImageView
-        android:id="@+id/title"
-        android:layout_width="@dimen/title_width"
-        android:layout_height="@dimen/title_height"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/title_margin_top"
-        android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/title" />
+        android:src="@mipmap/button_start_lights_main"/>
 
     <ImageView
         android:id="@+id/start_game_button"
@@ -35,7 +23,18 @@
         android:layout_marginBottom="@dimen/start_game_button_margin"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/button_start" />
+        android:src="@mipmap/button_start_main"/>
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="@dimen/title_width"
+        android:layout_height="@dimen/title_height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/title_margin_top"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+
 
     <ImageView
         android:id="@+id/settings_game_button"
@@ -45,30 +44,28 @@
         android:layout_marginBottom="@dimen/settings_game_button_margin"
         android:layout_toRightOf="@+id/start_game_button"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/button_settings" />
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/google_play_button"
         android:layout_width="@dimen/settings_game_button"
         android:layout_height="@dimen/settings_game_button"
-        app:srcCompat="@mipmap/button_google_play_foreground"
+
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/settings_game_button_margin"
         android:layout_toLeftOf="@id/start_game_button"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/tooltip"
         android:layout_width="@dimen/tooltip_width"
         android:layout_height="@dimen/tooltip_height"
         android:layout_alignLeft="@+id/google_play_button"
-        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/tooltip_margin_left"
         android:layout_marginBottom="@dimen/tooltip_margin_bottom"
-        android:scaleType="centerCrop"
-        android:layout_alignParentBottom="true"
-        app:srcCompat="@mipmap/tooltip_play_foreground" />
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
 </RelativeLayout>

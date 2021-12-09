@@ -34,7 +34,7 @@
             android:layout_marginTop="-40dp"
             android:layout_marginBottom="18dp"
             android:textSize="17sp"
-            android:background="@mipmap/time_border_round"
+
             />
 
         <games.shmugen.memorygame.ui.DifficultyView
@@ -56,12 +56,6 @@
         android:layout_weight="1"
         android:gravity="center">
 
-        <com.snatik.matches.ui.DifficultyView
-            android:id="@+id/select_difficulty_2"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            />
 
     </LinearLayout>
 
@@ -76,12 +70,6 @@
         android:layout_weight="1"
         android:gravity="center">
 
-        <com.snatik.matches.ui.DifficultyView
-            android:id="@+id/select_difficulty_3"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            />
 
     </LinearLayout>
 </LinearLayout>
