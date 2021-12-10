@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationSet;
+import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -73,6 +74,7 @@ public class MenuFragment extends Fragment {
         mTooltip = (ImageView) view.findViewById(R.id.tooltip);
 
         startLightsAnimation();
+        startTooltipAnimation();
 
 
 
@@ -126,5 +128,28 @@ public class MenuFragment extends Fragment {
         animator.setRepeatCount(ValueAnimator.INFINITE);
         mStartButtonLights.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         animator.start();
+    }
+
+    private void startTooltipAnimation(){
+
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(mTooltip, "scaleY", 0.8f);
+        scaleY.setDuration(200);
+        ObjectAnimator scaleYBack = ObjectAnimator.ofFloat(mTooltip, "scaleY", 1f);
+        scaleYBack.setDuration(500);
+        scaleYBack.setInterpolator(new BounceInterpolator());
+        final AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.setStartDelay(1000);
+        animatorSet.playSequentially(scaleY, scaleYBack);
+        animatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                animatorSet.setStartDelay(2000);
+                animatorSet.start();
+            }
+        });
+        mTooltip.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        animatorSet.start();
+
+
     }
 }
