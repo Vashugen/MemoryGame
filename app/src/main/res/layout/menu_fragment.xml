@@ -66,6 +66,7 @@
         android:layout_marginLeft="@dimen/tooltip_margin_left"
         android:layout_marginBottom="@dimen/tooltip_margin_bottom"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@mipmap/tooltip_play_main"/>
 
 </RelativeLayout>
