@@ -63,8 +63,7 @@ public class ScreenController {
                 break;
 
             case THEME_SELECT:
-                //return new ThemeSelectFragment();
-                break;
+                return new ThemeSelectFragment();
 
             case GAME:
                 //return new GameFragment();

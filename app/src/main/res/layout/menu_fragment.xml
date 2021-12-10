@@ -26,6 +26,18 @@
         android:src="@mipmap/button_start_main"/>
 
     <ImageView
+        android:id="@+id/settings_game_button"
+        android:layout_width="@dimen/settings_game_button"
+        android:layout_height="@dimen/settings_game_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/settings_game_button_margin"
+        android:layout_toRightOf="@+id/start_game_button"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/button_settings_main"/>
+
+
+    <ImageView
         android:id="@+id/title"
         android:layout_width="@dimen/title_width"
         android:layout_height="@dimen/title_height"
@@ -36,15 +48,7 @@
 
 
 
-    <ImageView
-        android:id="@+id/settings_game_button"
-        android:layout_width="@dimen/settings_game_button"
-        android:layout_height="@dimen/settings_game_button"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/settings_game_button_margin"
-        android:layout_toRightOf="@+id/start_game_button"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
+
 
     <ImageView
         android:id="@+id/google_play_button"

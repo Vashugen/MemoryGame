@@ -1,4 +1,3 @@
-/*
 package games.shmugen.memorygame.fragments;
 
 import android.os.Bundle;
@@ -36,4 +35,4 @@ public class ThemeSelectFragment extends Fragment {
 
         //for (int difficulty = 1; difficulty <= 6; difficulty++)
     }
-}*/
+}
