@@ -54,13 +54,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/title_margin_top"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
-
-
-
-
-
-
+        android:scaleType="centerCrop"
+        android:src="@mipmap/title_main"/>
 
     <ImageView
         android:id="@+id/tooltip"

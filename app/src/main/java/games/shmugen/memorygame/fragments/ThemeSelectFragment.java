@@ -33,6 +33,8 @@ public class ThemeSelectFragment extends Fragment {
     private void setStars(ImageView imageView, Theme theme, String type){
         int sum = 0;
 
-        //for (int difficulty = 1; difficulty <= 6; difficulty++)
+        for (int difficulty = 1; difficulty <= 6; difficulty++){
+
+        }
     }
 }
