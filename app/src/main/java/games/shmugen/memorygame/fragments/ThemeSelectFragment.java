@@ -27,6 +27,8 @@ public class ThemeSelectFragment extends Fragment {
         final Theme themeAnimals = Themes.createAnimalsTheme();
         setStars((ImageView) animals.findViewById(R.id.theme_animals), themeAnimals, "animals");
 
+        final Theme themeMonsters = Themes.createMonstersTheme();
+
         return inflater.inflate(R.layout.theme_select_fragment, container, false);
     }
 

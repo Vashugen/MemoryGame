@@ -4,10 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationSet;
 import android.widget.ImageView;
@@ -70,7 +72,7 @@ public class MenuFragment extends Fragment {
         mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_light);
         mTooltip = (ImageView) view.findViewById(R.id.tooltip);
 
-
+        startLightsAnimation();
 
 
 
@@ -115,5 +117,14 @@ public class MenuFragment extends Fragment {
         animatorSet.addListener(adapter);
         animatorSet.start();
 
+    }
+
+    private void startLightsAnimation(){
+        ObjectAnimator animator = ObjectAnimator.ofFloat(mStartButtonLights, "rotation", 0f, 360f);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.setDuration(6000);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        mStartButtonLights.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        animator.start();
     }
 }

@@ -23,7 +23,7 @@ public class Themes {
     public static Theme createMonstersTheme(){
 
         Theme theme = new Theme();
-        theme.id = 1;
+        theme.id = 2;
         theme.name = "Monsters";
         theme.backgroundImageUrl = URL_DRAWABLE + "back_horror";
         theme.titleImageUrls = new ArrayList<String>();
