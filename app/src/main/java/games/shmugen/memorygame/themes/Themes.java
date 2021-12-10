@@ -7,7 +7,6 @@ public class Themes {
     public static String URL_DRAWABLE = "drawable://";
 
     public static Theme createAnimalsTheme(){
-
         Theme theme = new Theme();
         theme.id = 1;
         theme.name = "Animals";
@@ -19,7 +18,6 @@ public class Themes {
         }
 
         return theme;
-
     }
 
     public static Theme createMonstersTheme(){

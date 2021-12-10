@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationSet;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,6 +61,12 @@ public class MenuFragment extends Fragment {
         });
 
         mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);
+        mGooglePlayGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+            }
+        });
         mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_light);
         mTooltip = (ImageView) view.findViewById(R.id.tooltip);
 
