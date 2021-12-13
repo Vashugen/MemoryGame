@@ -21,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import games.shmugen.memorygame.R;
+import games.shmugen.memorygame.common.Music;
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.ui.StartEvent;
 import games.shmugen.memorygame.ui.PopupManager;
@@ -76,8 +77,8 @@ public class MenuFragment extends Fragment {
         startLightsAnimation();
         startTooltipAnimation();
 
-
-
+        //play background music
+        Music.playBackgroundMusic();
 
         return view;
 
@@ -149,7 +150,5 @@ public class MenuFragment extends Fragment {
         });
         mTooltip.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         animatorSet.start();
-
-
     }
 }

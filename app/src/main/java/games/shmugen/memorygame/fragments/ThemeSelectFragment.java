@@ -14,6 +14,7 @@ import java.util.Locale;
 import games.shmugen.memorygame.R;
 import games.shmugen.memorygame.common.Memory;
 import games.shmugen.memorygame.common.Shared;
+import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
 import games.shmugen.memorygame.themes.Theme;
 import games.shmugen.memorygame.themes.Themes;
 
@@ -31,6 +32,31 @@ public class ThemeSelectFragment extends Fragment {
         setStars((ImageView) animals.findViewById(R.id.theme_animals), themeAnimals, "animals");
 
         final Theme themeMonsters = Themes.createMonstersTheme();
+        setStars((ImageView) monsters.findViewById(R.id.theme_monsters), themeMonsters, "monsters");
+
+        final Theme themeEmoji = Themes.createEmojiTheme();
+        setStars((ImageView) emoji.findViewById(R.id.theme_emoji), themeEmoji, "emoji");
+
+        animals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Shared.eventBus.notify(new ThemeSelectedEvent(themeAnimals));
+            }
+        });
+
+        monsters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Shared.eventBus.notify(new ThemeSelectedEvent(themeMonsters));
+            }
+        });
+
+        emoji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Shared.eventBus.notify(new ThemeSelectedEvent(themeEmoji));
+            }
+        });
 
         return inflater.inflate(R.layout.theme_select_fragment, container, false);
     }

@@ -14,6 +14,7 @@ import games.shmugen.memorygame.events.ui.NextGameEvent;
 import games.shmugen.memorygame.events.ui.ResetBackgroundEvent;
 import games.shmugen.memorygame.events.ui.StartEvent;
 import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
+import games.shmugen.memorygame.themes.Theme;
 
 public class Engine extends EventObserveAdapter {
 
@@ -21,6 +22,7 @@ public class Engine extends EventObserveAdapter {
     private ScreenController mScreenController;
     private Handler mHandler;
     private ImageView mBackgroundImage;
+    private Theme mSelectedTheme;
 
     public Engine() {
         mScreenController = ScreenController.getInstance();
@@ -82,7 +84,7 @@ public class Engine extends EventObserveAdapter {
 
     @Override
     public void onEvent(ThemeSelectedEvent event) {
-        super.onEvent(event);
+        mSelectedTheme = event.theme;
     }
 
     @Override
