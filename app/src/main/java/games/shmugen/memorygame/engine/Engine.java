@@ -85,6 +85,7 @@ public class Engine extends EventObserveAdapter {
     @Override
     public void onEvent(ThemeSelectedEvent event) {
         mSelectedTheme = event.theme;
+        mScreenController.openScreen(ScreenController.Screen.DIFFICULTY);
     }
 
     @Override

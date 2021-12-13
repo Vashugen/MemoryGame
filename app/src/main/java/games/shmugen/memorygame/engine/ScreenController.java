@@ -13,6 +13,7 @@ import games.shmugen.memorygame.R;
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
 //import games.shmugen.memorygame.fragments.GameFragment;
+import games.shmugen.memorygame.fragments.DifficultySelectFragment;
 import games.shmugen.memorygame.fragments.MenuFragment;
 import games.shmugen.memorygame.fragments.ThemeSelectFragment;
 
@@ -60,9 +61,7 @@ public class ScreenController {
             case MENU:
                 return new MenuFragment();
             case DIFFICULTY:
-
-                break;
-
+                return new DifficultySelectFragment();
             case THEME_SELECT:
                 return new ThemeSelectFragment();
 
