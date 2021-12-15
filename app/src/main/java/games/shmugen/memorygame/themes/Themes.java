@@ -1,6 +1,11 @@
 package games.shmugen.memorygame.themes;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
+
+import games.shmugen.memorygame.common.Shared;
+import games.shmugen.memorygame.utils.Utils;
 
 public class Themes {
 
@@ -52,4 +57,10 @@ public class Themes {
 
     }
 
+    public static Bitmap getBackgroundImage(Theme theme){
+        String drawableResourceName = theme.backgroundImageUrl.substring(Themes.URL_DRAWABLE.length());
+        int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
+        Bitmap bitmap = Utils.scaleDown(drawableResourceId, Utils.screenWidth(), Utils.screenHeight());
+        return bitmap;
+    }
 }

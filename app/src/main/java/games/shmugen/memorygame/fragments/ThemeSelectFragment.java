@@ -1,5 +1,7 @@
 package games.shmugen.memorygame.fragments;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
 import java.util.Locale;
@@ -58,14 +61,18 @@ public class ThemeSelectFragment extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.theme_select_fragment, container, false);
+        animateShow(animals);
+        animateShow(monsters);
+        animateShow(emoji);
+
+        return view;
     }
 
     private void setStars(ImageView imageView, Theme theme, String type) {
         int sum = 0;
 
         for (int difficulty = 1; difficulty <= 6; difficulty++) {
-            sum += Memory.getHighClass(theme.id, difficulty);
+            sum += Memory.getHighStars(theme.id, difficulty);
         }
 
         int num = sum / 6;
@@ -74,5 +81,16 @@ public class ThemeSelectFragment extends Fragment {
             int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
             imageView.setImageResource(drawableResourceId);
         }
+    }
+
+    private void animateShow(View view){
+        ObjectAnimator animatorScaleX = ObjectAnimator.ofFloat(view, "scaleX", 0.5f, 1f);
+        ObjectAnimator animatorScaleY = ObjectAnimator.ofFloat(view, "scaleY", 0.5f, 1f);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.setDuration(300);
+        animatorSet.playTogether(animatorScaleX, animatorScaleY);
+        animatorSet.setInterpolator(new DecelerateInterpolator(2));
+        view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        animatorSet.start();
     }
 }

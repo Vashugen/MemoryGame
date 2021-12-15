@@ -13,23 +13,132 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/difficulty_margin"
+        android:layout_marginRight="@dimen/difficulty_margin"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_weight="1">
+
+        <games.shmugen.memorygame.ui.DifficultyView
+            android:id="@+id/select_difficulty_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginBottom="18dp"
+            android:textSize="17sp"
+            android:id="@+id/time_difficulty_1"
+            android:background="@mipmap/time_border"
+            />
+
+        <games.shmugen.memorygame.ui.DifficultyView
+            android:id="@+id/select_difficulty_4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:textSize="17sp"
+            android:id="@+id/time_difficulty_4"
+            android:background="@mipmap/time_border"
+            />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/difficulty_margin"
+        android:layout_marginRight="@dimen/difficulty_margin"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_weight="1">
+
+        <games.shmugen.memorygame.ui.DifficultyView
+            android:id="@+id/select_difficulty_2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginBottom="18dp"
+            android:textSize="17sp"
+            android:id="@+id/time_difficulty_2"
+            android:background="@mipmap/time_border"
+            />
+
+        <games.shmugen.memorygame.ui.DifficultyView
+            android:id="@+id/select_difficulty_5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:textSize="17sp"
+            android:id="@+id/time_difficulty_5"
+            android:background="@mipmap/time_border"
+            />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/difficulty_margin"
+        android:layout_marginRight="@dimen/difficulty_margin"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_weight="1">
+
+        <games.shmugen.memorygame.ui.DifficultyView
+            android:id="@+id/select_difficulty_3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginBottom="18dp"
+            android:textSize="17sp"
+            android:id="@+id/time_difficulty_3"
+            android:background="@mipmap/time_border"
+            />
+
+        <games.shmugen.memorygame.ui.DifficultyView
+            android:id="@+id/select_difficulty_6"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:textSize="17sp"
+            android:id="@+id/time_difficulty_6"
+            android:background="@mipmap/time_border"
+            />
 
     </LinearLayout>
 </LinearLayout>
