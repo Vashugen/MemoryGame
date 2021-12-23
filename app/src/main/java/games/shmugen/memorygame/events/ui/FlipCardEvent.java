@@ -14,6 +14,6 @@ public class FlipCardEvent extends AbstractEvent {
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }

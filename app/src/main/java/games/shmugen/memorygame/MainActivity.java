@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Shared.engine.setBackgroundImageView(mBackgroundImage);
 
         setBackgroundImage();
+
         ScreenController.getInstance().openScreen(ScreenController.Screen.MENU);
 
     }
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     //установка изображения в бэкграунд и подгонка его размера под экран
     private void setBackgroundImage(){
 
-        Bitmap bitmap = Utils.scaleDown(R.mipmap.background, Utils.screenWidth(), Utils.screenHeight());
+        Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
         bitmap = Utils.crop(bitmap, Utils.screenHeight(), Utils.screenWidth());
         bitmap = Utils.downscaleBitmap(bitmap, 2);
         mBackgroundImage.setImageBitmap(bitmap);

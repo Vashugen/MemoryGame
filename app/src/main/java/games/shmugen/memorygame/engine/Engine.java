@@ -47,7 +47,6 @@ public class Engine extends EventObserveAdapter {
     }
 
     public void start(){
-
         Shared.eventBus.listen(ResetBackgroundEvent.TYPE, this);
         Shared.eventBus.listen(FlipCardEvent.TYPE, this);
         Shared.eventBus.listen(StartEvent.TYPE, this);
@@ -99,7 +98,7 @@ public class Engine extends EventObserveAdapter {
         AsyncTask<Void, Void, TransitionDrawable> task = new AsyncTask<Void, Void, TransitionDrawable>() {
             @Override
             protected TransitionDrawable doInBackground(Void... params) {
-                Bitmap bitmap = Utils.scaleDown(R.mipmap.background, Utils.screenWidth(), Utils.screenHeight());
+                Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
                 Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
                 backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
 

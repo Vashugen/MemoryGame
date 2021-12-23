@@ -19,6 +19,6 @@ public class DifficultySelectedEvent extends AbstractEvent {
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }

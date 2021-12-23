@@ -14,6 +14,6 @@ public class BackGameEvent extends AbstractEvent {
 
     @Override
     public String getType() {
-        return null;
+        return TYPE;
     }
 }
