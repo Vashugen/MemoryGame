@@ -1,10 +1,14 @@
 package games.shmugen.memorygame.fragments;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -52,10 +56,25 @@ public class DifficultySelectFragment extends Fragment {
         difficulty6.setDifficulty(6, Memory.getHighStars(theme.id, 6));
         setOnClick(difficulty6, 6);
 
+        animate(difficulty1, difficulty2, difficulty3, difficulty4, difficulty5, difficulty6);
 
-
+        Typeface type = Typeface.createFromAsset(Shared.context.getAssets(), "fonts/grobold.ttf");
 
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    private void animate(View... view){
+        AnimatorSet animatorSet = new AnimatorSet();
+        AnimatorSet.Builder builder = animatorSet.play(new AnimatorSet());
+        for (int i = 0; i < view.length; i++){
+            ObjectAnimator scaleX = ObjectAnimator.ofFloat(view[i], "scaleX", 0.8f, 1f);
+            ObjectAnimator scaleY = ObjectAnimator.ofFloat(view[i], "scaleY", 0.8f, 1f);
+            builder.with(scaleX).with(scaleY);
+        }
+
+        animatorSet.setDuration(500);
+        animatorSet.setInterpolator(new BounceInterpolator());
+        animatorSet.start();
     }
 
     private void setOnClick(View view, final int difficulty){
