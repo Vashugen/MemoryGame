@@ -15,4 +15,11 @@ public class Memory {
         return sharedPreferences.getInt(key, 0);
     }
 
+    public static int getBestTime(int theme, int difficulty){
+
+        SharedPreferences sharedPreferences = Shared.context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        String key = String.format(bestTimeKey, theme, difficulty);
+        return sharedPreferences.getInt(key, -1);
+    }
+
 }

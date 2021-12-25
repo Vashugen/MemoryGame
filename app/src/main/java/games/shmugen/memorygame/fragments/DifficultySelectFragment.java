@@ -5,11 +5,13 @@ import android.animation.ObjectAnimator;
 import android.graphics.Typeface;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,7 +62,37 @@ public class DifficultySelectFragment extends Fragment {
 
         Typeface type = Typeface.createFromAsset(Shared.context.getAssets(), "fonts/grobold.ttf");
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        TextView text1 = view.findViewById(R.id.time_difficulty_1);
+        text1.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        text1.setTypeface(type);
+        text1.setText(getBestTimeForStage(theme.id, 1));
+
+        TextView text2 = view.findViewById(R.id.time_difficulty_2);
+        text2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        text2.setTypeface(type);
+        text2.setText(getBestTimeForStage(theme.id, 2));
+
+        TextView text3 = view.findViewById(R.id.time_difficulty_3);
+        text3.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        text3.setTypeface(type);
+        text3.setText(getBestTimeForStage(theme.id, 3));
+
+        TextView text4 = view.findViewById(R.id.time_difficulty_4);
+        text4.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        text4.setTypeface(type);
+        text4.setText(getBestTimeForStage(theme.id, 4));
+
+        TextView text5 = view.findViewById(R.id.time_difficulty_5);
+        text5.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        text5.setTypeface(type);
+        text5.setText(getBestTimeForStage(theme.id, 5));
+
+        TextView text6 = view.findViewById(R.id.time_difficulty_6);
+        text6.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        text6.setTypeface(type);
+        text6.setText(getBestTimeForStage(theme.id, 6));
+
+        return view;
     }
 
     private void animate(View... view){
@@ -84,5 +116,19 @@ public class DifficultySelectFragment extends Fragment {
                 Shared.eventBus.notify(new DifficultySelectedEvent(difficulty));
             }
         });
+    }
+
+    private String getBestTimeForStage(int theme, int difficulty){
+        int bestTime = Memory.getBestTime(theme, difficulty);
+        if (bestTime != -1){
+            int minutes = (bestTime % 3600) / 60;
+            int seconds = (bestTime) % 60;
+            String result = String.format("BEST : %02d:%02d", minutes, seconds);
+            return result;
+        }else {
+            String result = "BEST : -";
+            return result;
+        }
+
     }
 }
