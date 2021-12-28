@@ -64,7 +64,6 @@ public class ScreenController {
                 return new DifficultySelectFragment();
             case THEME_SELECT:
                 return new ThemeSelectFragment();
-
             case GAME:
                 //return new GameFragment();
         }

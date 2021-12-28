@@ -8,6 +8,11 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+
 import games.shmugen.memorygame.R;
 import games.shmugen.memorygame.common.Shared;
 import games.shmugen.memorygame.events.EventObserveAdapter;
@@ -20,6 +25,9 @@ import games.shmugen.memorygame.events.ui.NextGameEvent;
 import games.shmugen.memorygame.events.ui.ResetBackgroundEvent;
 import games.shmugen.memorygame.events.ui.StartEvent;
 import games.shmugen.memorygame.events.ui.ThemeSelectedEvent;
+import games.shmugen.memorygame.model.BoardArrangment;
+import games.shmugen.memorygame.model.BoardConfiguration;
+import games.shmugen.memorygame.model.Game;
 import games.shmugen.memorygame.themes.Theme;
 import games.shmugen.memorygame.themes.Themes;
 import games.shmugen.memorygame.utils.Utils;
@@ -32,6 +40,8 @@ public class Engine extends EventObserveAdapter {
     private ImageView mBackgroundImage;
     private Theme mSelectedTheme;
     private int mFlippedId = -1;
+    private Game mPlayingGame = null;
+    private int mToFlip = -1;
 
     public Engine() {
         mScreenController = ScreenController.getInstance();
@@ -78,6 +88,14 @@ public class Engine extends EventObserveAdapter {
     @Override
     public void onEvent(DifficultySelectedEvent event) {
         mFlippedId = -1;
+        mPlayingGame = new Game();
+        mPlayingGame.boardConfiguration = new BoardConfiguration(event.difficulty);
+        mPlayingGame.theme = mSelectedTheme;
+        mToFlip = mPlayingGame.boardConfiguration.numTiles;
+
+        arrangeBoard();
+
+        mScreenController.openScreen(ScreenController.Screen.GAME);
     }
 
     @Override
@@ -132,5 +150,38 @@ public class Engine extends EventObserveAdapter {
 
     public Theme getSelectedTheme(){
         return mSelectedTheme;
+    }
+
+    private void arrangeBoard(){
+        BoardConfiguration boardConfiguration = mPlayingGame.boardConfiguration;
+        BoardArrangment boardArrangment = new BoardArrangment();
+
+        List<Integer> ids = new ArrayList<>();
+        for (int i = 0; i < boardConfiguration.numTiles; i++){
+            ids.add(i);
+        }
+
+        Collections.shuffle(ids);
+
+        //place the board
+        List<String> titleImageUrls = mPlayingGame.theme.titleImageUrls;
+        Collections.shuffle(titleImageUrls);
+
+        boardArrangment.pairs = new HashMap<Integer, Integer>();
+        boardArrangment.tileUrls = new HashMap<Integer, String>();
+
+        int j = 0;
+        for (int i = 0; i < ids.size(); i ++){
+            if(i + 1 < ids.size()){
+                boardArrangment.pairs.put(ids.get(i), ids.get(i+1));
+                boardArrangment.pairs.put(ids.get(i+1), ids.get(i));
+                boardArrangment.tileUrls.put(ids.get(i), titleImageUrls.get(j));
+                boardArrangment.tileUrls.put(ids.get(i+1), titleImageUrls.get(j));
+                i++;
+                j++;
+            }
+        }
+
+        mPlayingGame.boardArrangment = boardArrangment;
     }
 }

@@ -39,11 +39,11 @@ public class DifficultySelectFragment extends Fragment {
         setOnClick(difficulty1, 1);
 
         DifficultyView difficulty2 = (DifficultyView) view.findViewById(R.id.select_difficulty_2);
-        difficulty1.setDifficulty(2, Memory.getHighStars(theme.id, 2));
+        difficulty2.setDifficulty(2, Memory.getHighStars(theme.id, 2));
         setOnClick(difficulty2, 2);
 
         DifficultyView difficulty3 = (DifficultyView) view.findViewById(R.id.select_difficulty_3);
-        difficulty1.setDifficulty(3, Memory.getHighStars(theme.id, 3));
+        difficulty3.setDifficulty(3, Memory.getHighStars(theme.id, 3));
         setOnClick(difficulty3, 3);
 
         DifficultyView difficulty4 = (DifficultyView) view.findViewById(R.id.select_difficulty_4);
