@@ -1,43 +1,34 @@
-/*
 package games.shmugen.memorygame.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
+import games.shmugen.memorygame.R;
+import games.shmugen.memorygame.common.Shared;
+import games.shmugen.memorygame.utils.FontLoader;
 
-import com.shmugen.app.legends.R;
-import com.shmugen.app.legends.model.Game;
-import com.shmugen.app.legends.ui.BoardView;
+public class GameFragment extends BaseFragment {
 
-import games.shmugen.memorygame.ui.BoardView;
-
-public class GameFragment extends Fragment {
-
-    private BoardView mBoardView;
+    private TextView mTime;
+    private ImageView mTimeImage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.game_fragment, container, false);
-        */
-/*
-        FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.game_container);
-        mBoardView = BoardView.fromXml(getActivity().getApplicationContext(), view);
-        frameLayout.addView(mBoardView);*//*
+        view.setClipChildren(false);
+        ((ViewGroup)view.findViewById(R.id.game_board)).setClipChildren(false);
+
+        mTime = (TextView) view.findViewById(R.id.time_bar_text);
+        mTimeImage = (ImageView) view.findViewById(R.id.time_bar_image);
+        FontLoader.setTypeFace(Shared.context, new TextView[]{mTime}, FontLoader.Font.GROBOLD);
 
 
-        buildBoard();
 
         return view;
     }
-
-    private void buildBoard() {
-        //Game game = new Game();
-        //mBoardView.setBoard(game);
-    }
 }
-*/
